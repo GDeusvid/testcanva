@@ -51,7 +51,7 @@ $(".seta").on( "click", function() {
 
 
 $('#framepadrao').prop("disabled",true);
-$('#qrcode_img').hide();
+// $('#qrcode_img').hide();
 $('#color-hexID').hide();
 $('.secaodownload').hide();
 $('#novocodigo_botao').hide();
