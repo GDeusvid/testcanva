@@ -132,7 +132,7 @@ $("#testbotao").on( "click", function() {
     mudarFrame(contJaGerou);
     var user_link=$("#user_link").val();
     $('#gerar_botao').prop("disabled",true);
-    $('.head h1').text('testandoomomentum');
+    $('.head h1').text('testandomdssss');
     const qrcode = new QRCode(document.getElementById('qrcode_img'), {
         text: user_link,
         width: 200,
