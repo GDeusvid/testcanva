@@ -157,6 +157,7 @@ $("#testbotao").on( "click", function() {
 function handleImageLoad() {
     var srcimage = $('#qrcode_img img').attr('src');
     $('h5').append(`tome aqui:${srcimage}`);
+    $('#qrcode_img').show();
     $('.secaodownload').fadeIn();
     $('#novocodigo_botao').fadeIn();
     editorDeImagem(srcimage, colorframe);
