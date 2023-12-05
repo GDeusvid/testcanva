@@ -132,25 +132,34 @@ $("#testbotao").on( "click", function() {
     mudarFrame(contJaGerou);
     var user_link=$("#user_link").val();
     $('#gerar_botao').prop("disabled",true);
-    $('.head h1').text('testandoosimm');
+    $('.head h1').text('testandooagora');
     const qrcode = new QRCode(document.getElementById('qrcode_img'), {
         text: user_link,
         width: 200,
         height: 200
     });
     setTimeout(function () {
-        var srcimage = $('#qrcode_img img').attr('src');
-        if (srcimage) {
-            $('.secaodownload').fadeIn();
-            $('#novocodigo_botao').fadeIn();
-            $('#qrcode_img').show();
-        } else {
-            console.error('A imagem não foi carregada dentro do intervalo de tempo.');
-        }
-    }, 1000);
+       // Verifica se a imagem já está carregada
+     var imgElement = $('#qrcode_img img')[0];
+
+     if (imgElement.complete) {
+         // A imagem já está carregada
+         handleImageLoad();
+     } else {
+         // Aguarda o evento de carga da imagem
+         imgElement.onload = handleImageLoad;
+     }
+    }, 1200);
+     
     
     
 });
+function handleImageLoad() {
+    var srcimage = $('#qrcode_img img').attr('src');
+    $('.secaodownload').fadeIn();
+    $('#novocodigo_botao').fadeIn();
+    editorDeImagem(srcimage, colorframe);
+}
 
 
 //Download botao
