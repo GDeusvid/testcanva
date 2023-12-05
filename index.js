@@ -138,16 +138,16 @@ $("#testbotao").on( "click", function() {
         width: 200,
         height: 200
     });
-    $('#qrcode_img img').on('load', function() {
-        // Agora, a imagem QR Code foi carregada
-        var srcimage= $('#qrcode_img img').attr('src');
-        $('.secaodownload').fadeIn();
-        $('#novocodigo_botao').fadeIn();
-        
-    
-        // Agora você pode fazer o que quiser com a URL da imagem
-       editorDeImagem(srcimage,colorframe); 
-    });
+    setTimeout(function () {
+        var srcimage = $('#qrcode_img img').attr('src');
+        if (srcimage) {
+            $('.secaodownload').fadeIn();
+            $('#novocodigo_botao').fadeIn();
+            editorDeImagem(srcimage, colorframe);
+        } else {
+            console.error('A imagem não foi carregada dentro do intervalo de tempo.');
+        }
+    }, 1000);
     
     
 });
