@@ -51,7 +51,7 @@ $(".seta").on( "click", function() {
 
 
 $('#framepadrao').prop("disabled",true);
-// $('#qrcode_img').hide();
+$('#qrcode_img').hide();
 $('#color-hexID').hide();
 $('.secaodownload').hide();
 $('#novocodigo_botao').hide();
@@ -143,7 +143,7 @@ $("#testbotao").on( "click", function() {
         if (srcimage) {
             $('.secaodownload').fadeIn();
             $('#novocodigo_botao').fadeIn();
-            editorDeImagem(srcimage, colorframe);
+            $('#qrcode_img').show();
         } else {
             console.error('A imagem não foi carregada dentro do intervalo de tempo.');
         }
