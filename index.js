@@ -1,6 +1,6 @@
 
 
-// opções de qrcode
+// opções de qr code
 $("#linkoutexto_botao").on( "click", function() {
     $('h3').text('Insira seu link ou texto, gere um QR CODE e faça o download!');
     $('h3').fadeIn();
