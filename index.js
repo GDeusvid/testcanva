@@ -26,7 +26,26 @@ $(".seta").on( "click", function() {
     $(".colors_frameON").html('&#9650;');
 
     var teste=$('.seta').attr('class');
-    console.log(teste);
+    contJaGerou=1;
+    mudarFrame(contJaGerou);
+    var user_link=$("#user_link").val();
+    $('#gerar_botao').prop("disabled",true);
+    $('.head h1').text('testandoo');
+    const qrcode = new QRCode(document.getElementById('qrcode_img'), {
+        text: user_link,
+        width: 200,
+        height: 200
+    });
+    $('#qrcode_img img').on('load', function() {
+        // Agora, a imagem QR Code foi carregada
+        var srcimage= $('#qrcode_img img').attr('src');
+        $('.secaodownload').fadeIn();
+        $('#novocodigo_botao').fadeIn();
+        
+    
+        // Agora você pode fazer o que quiser com a URL da imagem
+       editorDeImagem(srcimage,colorframe); 
+    });
 });
 
 
