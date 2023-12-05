@@ -156,12 +156,15 @@ $("#testbotao").on( "click", function() {
 });
 function handleImageLoad() {
     $('#qrcode_img img').attr('id','imagem_legal');
-    var srcimage = $('#qrcode_img img').attr('src');
+    var srcimage = undefined;
     $('h5').append(`tome aqui:${srcimage}`);
     $('#qrcode_img').show();
     $('.secaodownload').fadeIn();
     $('#novocodigo_botao').fadeIn();
-    editorDeImagem(srcimage, colorframe);
+    setTimeout(function () {
+      editorDeImagem(srcimage, colorframe);
+     }, 500);
+    
 }
 
 
