@@ -143,7 +143,7 @@ $("#testbotao").on( "click", function() {
      var imgElement = $('#qrcode_img img')[0];
 
      if (imgElement.complete) {
-         // A imagem já está carregada
+         // A imagem já está carregada 
          handleImageLoad();
      } else {
          // Aguarda o evento de carga da imagem
@@ -155,6 +155,7 @@ $("#testbotao").on( "click", function() {
     
 });
 function handleImageLoad() {
+    $('#qrcode_img img').attr('id','imagem_legal');
     var srcimage = $('#qrcode_img img').attr('src');
     $('h5').append(`tome aqui:${srcimage}`);
     $('#qrcode_img').show();

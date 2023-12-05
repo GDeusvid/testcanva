@@ -10,6 +10,7 @@ if (canvas.getContext) {
   console.log("navegador suportado");
   let nave=new Image();
   nave.src=srcimage;
+  const img = document.getElementById('imagem_legal');
   
   //imagem
         //   ctx.drawImage(nave,25,25);
@@ -23,7 +24,7 @@ if (canvas.getContext) {
 
     
         
-    ctx.drawImage(nave,0,0,200,200,25,25,200,200);  
+    ctx.drawImage(img,0,0,200,200,25,25,200,200);  
     
   
 
